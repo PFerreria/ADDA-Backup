@@ -1,0 +1,14 @@
+constants:
+int n, number of products
+int m, number of destinies
+int D(j), j in [0,m), minimum demand of products in destiny j
+int C(i), i in [0,n), available units of product i
+int A(i,j), i in [0,n), j in [0,m), cost of storing 1 unit of product i in destiny j
+
+OF: min(sum(x[i,j]*A(i,j), i in [0,n), j in [0,m))
+
+constraints:
+C1: sum(x[i,j], i in [0,n)) >= D(j), j in [0,m), units sent of product i must be bigger than minimum demand in destiny j
+C2: sum(x[i,j], j in [0,m)) <= C(i), i in [0,n), units sent of product i cannot exceed available units
+
+int: x[i,j], i in [0,n), j in [0,m), number units of product i sent to destiny j

@@ -1,0 +1,24 @@
+head section
+
+Integer getN()
+Integer getM()
+Integer getFieldSize(Integer i)
+Integer getCropSize(Integer i)
+Integer isIncompatible(Integer i, Integer j)
+
+Integer n = getN()
+Integer m = getM()
+
+goal section
+
+max sum(x[i,j], i in 0 .. n, j in 0 .. m) 
+
+constraints section
+
+sum(x[i,j], j in 0 .. m) <= 1, i in 0 .. n
+sum(getCropSize(i) x[i,j], i in 0 .. n) <= getFieldSize(j), j in 0 .. m
+x[i,j] + x[k,j] <= 1, i in 0 .. n, k in 0 .. n, j in 0 .. m | isIncompatible(i,k) = 1
+
+bin
+
+x[i,j], i in 0 .. n, j in 0 .. m

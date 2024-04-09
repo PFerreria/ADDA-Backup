@@ -1,0 +1,16 @@
+constants:
+int n, number of products
+int m, number of category
+int bud, budget
+int p(i), i in [0,n), price of product i
+int v(i), i in [0,n), rating of product i
+bin c(i,j), i in [0,n), j in [0,m), product i in category j
+
+OF: min(sum(x[i]*p(i), i in [0,n))
+
+constraints:
+C1: sum(x[i] c(i,j), i in [0,n)) >= 1, j in [0,m), must cover all categories
+C2: sum(p(i)*x[i], i in [0,n)) <= bud, total price cannot exceed budget
+C3: sum(v(i)*x[i], i in [0,n)) >= 3, average rating of prices has to be higher or equal than 3
+
+bin: x[i], i in [0,n), product i selected or not

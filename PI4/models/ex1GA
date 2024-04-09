@@ -1,0 +1,14 @@
+constants:
+int n, number of crop varieties
+int m, number of fields
+int S(i), i in [0,n), required m2 for planting variety
+int H(j), j in [0,m), m2 of field
+incomp(i,j), i in [0,n), j in [0,m)
+
+OF: max(sum(1)), i in [0,n) | x[i]>=0)
+
+constraints:
+sum(getCropSize(i) x[i,j], i in [0,n)) <= getFieldSize(j), j in [0,m), used space cannot exceed availability
+x[i] - x[k] != 1, i in [0,n), k in [0,n) | isIncompatible(i,k) = 1, incompatible varieties cannot be in the same field
+
+int: x[i], i in [0,n)), field product i is in

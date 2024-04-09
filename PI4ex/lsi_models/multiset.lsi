@@ -1,0 +1,25 @@
+head section
+
+Integer getM()
+Integer getRequiredSum()
+Integer e(Integer i)
+Integer m = getM()
+Integer requiredSum = getRequiredSum()
+
+
+goal section
+
+min sum(times[i], i in 0 .. m)
+
+constraints section
+
+sum(e(i) times[i], i in 0 .. m) = requiredSum
+
+bounds section
+
+times[i] >= 0, i in 0 .. m
+
+int  
+
+times[i], i in 0 .. m
+

@@ -1,0 +1,15 @@
+constants:
+int n, number of people
+int age(i), i in [0,n), age of person i
+int nat(i), i in [0,n), nationality of person i
+int id(i), i in [0,n), languages spoken by person i
+int af(i,j), i in [0,n), j in [0,n), affinity between person i and j
+
+OF: min(sum(x[i,j]*A(i,j), i in [0,n), j in [0,n))
+
+constraints:
+C1: id(i).anyMatch(id(j)) = 1, i in [0,n), j in [0,n), one language in common
+C2: abs[age(i) - age(j)] <= 5, i in [0,n), j in [0,n), max of 5 years of difference
+C3: nat(i) != nat(j), i in [0,n), j in [0,n), different nationality
+
+int: x[i], i in [0,n)

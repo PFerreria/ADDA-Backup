@@ -1,0 +1,15 @@
+ constants:
+int n, number of crop varieties
+int m, number of fields
+int S(i), i in [0,n), required m2 for planting variety
+int H(j), j in [0,m), m2 of field
+incomp(i,j), i in [0,n), j in [0,m)
+
+OF: max(sum(x[i,j], i in [0,n), j in [0,m))
+
+constraints:
+C1: sum(x[i,j], j in [0,m)) <= 1, i in [0,n), one variety per field or in none
+C2: sum(S(i)*x[i,j], i in [0,m)) <= H(j), j in [0,m), used space cannot exceed availability
+C3: x[i,j]+x[k,j] <= 1, j in [0,m)| incomp(i,k), incompatible varieties cannot be in the same field
+
+bin: x[i,j], i in [0,n), j in [0,m), crop variable i planted in field j

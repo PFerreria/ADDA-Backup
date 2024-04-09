@@ -1,0 +1,22 @@
+head section
+
+Integer getN()
+Integer getM()
+Integer getMinDemand(Integer i)
+Integer getAvalUnits(Integer j)
+Integer getStoringCost(Integer i, Integer j)
+Integer n = getN()
+Integer m = getM()
+
+goal section
+
+min sum(getStoringCost(i, j) x[i,j], i in 0 .. n, j in 0 .. m) 
+
+constraints section
+
+sum(x[i,j], j in 0 .. m) <= getAvalUnits(i), i in 0 .. n
+sum(x[i,j], i in 0 .. n) >= getMinDemand(j), j in 0 .. m
+
+int
+
+x[i,j], i in 0 .. n, j in 0 .. m

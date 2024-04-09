@@ -1,0 +1,24 @@
+head section
+
+Integer getNProc()
+Integer getNTask()
+Integer getDur(Integer i)
+Integer m = getNProc()
+Integer n = getNTask()
+
+goal section
+
+min t[0]
+
+constraints section
+
+t[0] - sum(getDur(t) which[p,t], t in 0 .. n) >= 0, p in 0 .. m
+sum(which[p, t], p in 0 .. m) = 1, t in 0 .. n
+
+bin 
+
+which[p, t], p in 0 .. m, t in 0 .. n
+
+int 
+
+t[0]
